@@ -40,3 +40,12 @@ app.get("/product/:id", async (req, res) => {
 app.listen(8080, () => {
   console.log("Server running on http://localhost:8080");
 });
+
+const categoryRoutes = require("./category"); // adjust path
+
+app.use(express.json());
+app.use("/api", categoryRoutes);
+
+// MongoDB connection
+"mongodb+srv://chill:practice@cluster1.lk41ecn.mongodb.net/ecommerce", 
+{useNewUrlParser: true, useUnifiedTopology: true};
